@@ -7,6 +7,8 @@ class QuizGame:
 
         self.add_default_quizzes()
 
+        self.best_score = 0
+
     def add_default_quizzes(self):
         quiz1 = Quiz("대한민국의 수도는?", "서울")
         quiz2 = Quiz("2 + 3은?", "5")
@@ -25,7 +27,6 @@ class QuizGame:
         print("====================\n")
 
     def play_quiz(self):
-
         score = 0
 
         for quiz in self.quizzes:
@@ -40,3 +41,9 @@ class QuizGame:
             print()
 
         print(f"총 {score}문제를 맞혔습니다.")
+
+        if score > self.best_score:
+            self.best_score = score
+            print("새로운 최고 점수입니다!")
+
+        print(f"최고 점수: {self.best_score}")
