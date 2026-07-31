@@ -1,5 +1,5 @@
 from statistics import multimode
-
+from quiz_game import QuizGame
 
 def show_menu():
     print("==============================")
@@ -14,8 +14,11 @@ def show_menu():
 
 
 def main():
+    game = QuizGame()
+
     while True:
         show_menu()
+
         menu = input("메뉴를 선택하세요: ")
 
         if menu == "1":

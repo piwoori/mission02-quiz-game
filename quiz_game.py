@@ -1,4 +1,6 @@
-class QuizGame:
-    """퀴즈 게임 전체를 관리하는 클래스."""
+from quiz import Quiz
 
-    pass
+class QuizGame:
+    def __init__(self):
+        self.quizzes = []
+        self.best_score = 0
