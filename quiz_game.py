@@ -1,10 +1,11 @@
+import json
 from quiz import Quiz
 
 class QuizGame:
     def __init__(self):
         self.quizzes = []
         self.best_score = 0
-
+        self.file_name = "quiz_data.json"
         self.add_default_quizzes()
 
         self.best_score = 0
@@ -15,6 +16,8 @@ class QuizGame:
 
         new_quiz = Quiz(question, answer)
         self.quizzes.append(new_quiz)
+
+        self.save_data()
 
         print("퀴즈가 추가되었습니다.")
 
@@ -53,6 +56,24 @@ class QuizGame:
 
         if score > self.best_score:
             self.best_score = score
+            self.save_data()
             print("새로운 최고 점수입니다!")
 
         print(f"최고 점수: {self.best_score}")
+
+    def save_data(self):
+        data = {
+            "best_score": self.best_score,
+            "quizzes": []
+        }
+
+        for quiz in self.quizzes:
+            quiz_data = {
+                "question": quiz.question,
+                "answer": quiz.answer
+            }
+
+            data["quizzes"].append(quiz_data)
+
+        with open(self.file_name, "w", encoding="utf-8") as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
