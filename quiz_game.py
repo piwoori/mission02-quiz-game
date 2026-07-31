@@ -15,3 +15,11 @@ class QuizGame:
         self.quizzes.append(quiz1)
         self.quizzes.append(quiz2)
         self.quizzes.append(quiz3)
+
+    def show_quizzes(self):
+        print("\n===== 퀴즈 목록 =====")
+
+        for index, quiz in enumerate(self.quizzes, start=1):
+            print(f"{index}. {quiz.question}")
+
+        print("====================\n")

@@ -26,7 +26,7 @@ def main():
         elif menu == "2":
             print("퀴즈 추가를 선택했습니다.")
         elif menu == "3":
-            print("퀴즈 목록을 추가했습니다.")
+            game.show_quizzes()
         elif menu == "4":
             print("점수 확인을 선택했습니다.")
         elif menu == "5":
