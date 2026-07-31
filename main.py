@@ -22,7 +22,7 @@ def main():
         menu = input("메뉴를 선택하세요: ")
 
         if menu == "1":
-            print("퀴즈 풀기를 선택했습니다.")
+            game.play_quiz()
         elif menu == "2":
             print("퀴즈 추가를 선택했습니다.")
         elif menu == "3":

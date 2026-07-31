@@ -23,3 +23,14 @@ class QuizGame:
             print(f"{index}. {quiz.question}")
 
         print("====================\n")
+
+    def play_quiz(self):
+        for quiz in self.quizzes:
+            user_answer = input(f"{quiz.question} ")
+
+            if user_answer == quiz.answer:
+                print("정답입니다!")
+            else:
+                print(f"오답입니다. 정답은 {quiz.answer}입니다.")
+
+            print()
