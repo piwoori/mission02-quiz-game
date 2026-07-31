@@ -24,7 +24,7 @@ def main():
         if menu == "1":
             game.play_quiz()
         elif menu == "2":
-            print("퀴즈 추가를 선택했습니다.")
+            game.add_quiz()
         elif menu == "3":
             game.show_quizzes()
         elif menu == "4":

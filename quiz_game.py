@@ -9,6 +9,15 @@ class QuizGame:
 
         self.best_score = 0
 
+    def add_quiz(self):
+        question = input("추가할 퀴즈의 질문을 입력하세요: ")
+        answer = input("정답을 입력하세요: ")
+
+        new_quiz = Quiz(question, answer)
+        self.quizzes.append(new_quiz)
+
+        print("퀴즈가 추가되었습니다.")
+
     def add_default_quizzes(self):
         quiz1 = Quiz("대한민국의 수도는?", "서울")
         quiz2 = Quiz("2 + 3은?", "5")
