@@ -61,7 +61,7 @@ class QuizGame:
         )
 
         quiz4 = Quiz(
-            "JAva에서 클래스를 선언할 때 사용하는 키워드는?",
+            "Java에서 클래스를 선언할 때 사용하는 키워드는?",
             ["class", "new", "import", "static"],
             1
         )
