@@ -99,3 +99,6 @@ class QuizGame:
         except FileNotFoundError:
             print("저장된 파일이 없어 기본 퀴즈를 사용합니다.")
             self.add_default_quizzes()
+
+    def show_best_score(self):
+        print(f"\n현재 최고 점수는 {self.best_score}점입니다.\n")

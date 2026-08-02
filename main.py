@@ -28,7 +28,7 @@ def main():
         elif menu == "3":
             game.show_quizzes()
         elif menu == "4":
-            print("점수 확인을 선택했습니다.")
+            game.show_best_score()
         elif menu == "5":
             print("프로그램을 종료합니다.")
             break
