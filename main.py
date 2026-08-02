@@ -22,7 +22,7 @@ def main():
         menu = input("메뉴를 선택하세요: ").strip()
 
         if menu == "":
-            print("입력값ㅇ; 없습니다. 1부터 5까지의 숫자를 입력해주세요.\n")
+            print("입력값이 없습니다. 1부터 5까지의 숫자를 입력해주세요.\n")
         elif menu == "1":
             game.play_quiz()
         elif menu == "2":
