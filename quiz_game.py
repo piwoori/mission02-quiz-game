@@ -1,14 +1,15 @@
 import json
+from pathlib import Path
 from quiz import Quiz
 
 class QuizGame:
     def __init__(self):
         self.quizzes = []
         self.best_score = 0
-        self.file_name = "quiz_data.json"
-        self.add_default_quizzes()
+        project_root = Path(__file__).resolve().parent
+        self.file_name = project_root / "state.json"
 
-        self.best_score = 0
+        self.load_data()
 
     def add_quiz(self):
         question = input("추가할 퀴즈의 질문을 입력하세요: ")
@@ -77,3 +78,24 @@ class QuizGame:
 
         with open(self.file_name, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
+
+    def load_data(self):
+        try:
+            with open(self.file_name, "r", encoding="utf-8") as file:
+                data = json.load(file)
+
+            self.best_score = data["best_score"]
+            self.quizzes = []
+
+            for quiz_data in data["quizzes"]:
+                quiz = Quiz(
+                    quiz_data["question"],
+                    quiz_data["answer"]
+                )
+                self.quizzes.append(quiz)
+
+            print("저장된 데이터를 불러왔습니다.")
+
+        except FileNotFoundError:
+            print("저장된 파일이 없어 기본 퀴즈를 사용합니다.")
+            self.add_default_quizzes()

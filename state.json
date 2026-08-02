@@ -1,0 +1,21 @@
+{
+    "best_score": 0,
+    "quizzes": [
+        {
+            "question": "대한민국의 수도는?",
+            "answer": "서울"
+        },
+        {
+            "question": "2 + 3은?",
+            "answer": "5"
+        },
+        {
+            "question": "파이썬 파일의 확장자는?",
+            "answer": "py"
+        },
+        {
+            "question": "Java의 확장자는?",
+            "answer": "java"
+        }
+    ]
+}
