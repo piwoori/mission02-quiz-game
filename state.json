@@ -1,17 +1,45 @@
 {
-    "best_score": 3,
+    "best_score": 2,
     "quizzes": [
         {
             "question": "대한민국의 수도는?",
-            "answer": "서울"
+            "choices": [
+                "부산",
+                "서울",
+                "인천",
+                "대전"
+            ],
+            "answer": 2
         },
         {
-            "question": "2 + 3은?",
-            "answer": "5"
+            "question": "2 + 3의 결과는?",
+            "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            "answer": 2
         },
         {
             "question": "파이썬 파일의 확장자는?",
-            "answer": "py"
+            "choices": [
+                ".java",
+                ".html",
+                ".py",
+                ".css"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "10 * 5의 결과는?",
+            "choices": [
+                "50",
+                "500",
+                "5000",
+                "0"
+            ],
+            "answer": 1
         }
     ]
 }
