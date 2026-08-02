@@ -100,5 +100,12 @@ class QuizGame:
             print("저장된 파일이 없어 기본 퀴즈를 사용합니다.")
             self.add_default_quizzes()
 
+        except json.JSONDecodeError:
+            print("저장된 파일이 없어 기본 퀴즈로 복구합니다.")
+            self.quizzes = []
+            self.best_score = 0
+            self.add_default_quizzes()
+            self.save_data()
+
     def show_best_score(self):
         print(f"\n현재 최고 점수는 {self.best_score}점입니다.\n")
