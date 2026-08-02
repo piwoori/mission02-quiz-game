@@ -60,9 +60,23 @@ class QuizGame:
             3
         )
 
+        quiz4 = Quiz(
+            "JAva에서 클래스를 선언할 때 사용하는 키워드는?",
+            ["class", "new", "import", "static"],
+            1
+        )
+
+        quiz5 = Quiz(
+            "Git에서 로컬 커밋을 원격 저장소로 업로드하는 명령어는?",
+            ["pull", "clone", "push", "status"],
+            3
+        )
+
         self.quizzes.append(quiz1)
         self.quizzes.append(quiz2)
         self.quizzes.append(quiz3)
+        self.quizzes.append(quiz4)
+        self.quizzes.append(quiz5)
 
     def show_quizzes(self):
         print("\n===== 퀴즈 목록 =====")

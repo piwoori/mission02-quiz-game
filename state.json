@@ -1,5 +1,5 @@
 {
-    "best_score": 2,
+    "best_score": 6,
     "quizzes": [
         {
             "question": "대한민국의 수도는?",
@@ -32,14 +32,34 @@
             "answer": 3
         },
         {
-            "question": "10 * 5의 결과는?",
+            "question": "JAva에서 클래스를 선언할 때 사용하는 키워드는?",
             "choices": [
-                "50",
-                "500",
-                "5000",
-                "0"
+                "class",
+                "new",
+                "import",
+                "static"
             ],
             "answer": 1
+        },
+        {
+            "question": "Git에서 로컬 커밋을 원격 저장소로 업로드하는 명령어는?",
+            "choices": [
+                "pull",
+                "clone",
+                "push",
+                "status"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "코디세이에서 아이맥이 있는학습 공간 이름은?",
+            "choices": [
+                "오아시스",
+                "공부방",
+                "커널",
+                "캐빈"
+            ],
+            "answer": 4
         }
     ]
 }
