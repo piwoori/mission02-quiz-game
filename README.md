@@ -19,13 +19,12 @@ Python 객체지향 프로그래밍(OOP), JSON 파일 입출력, Git 브랜치 �
 # 개발 환경
 
 - Python 3.11.8
-- IntelliJ IDEA
+- Visual Studio Code
 - Git
 - SourceTree
 - macOS
 
-> **추가 캡처 필요:** Python 버전과 프로젝트 실행 환경을 확인할 수 있는 화면  
-> 권장 파일명: `docs/screenshots/development-environment.png`
+아래 화면에서 프로젝트 파일 구조와 Python, Git 버전을 확인할 수 있습니다.
 
 ![개발 환경](docs/screenshots/development-environment.png)
 
@@ -33,7 +32,7 @@ Python 객체지향 프로그래밍(OOP), JSON 파일 입출력, Git 브랜치 �
 
 # 실행 방법
 
-프로젝트를 복제합니다.
+원격 저장소를 복제합니다.
 
 ```bash
 git clone https://github.com/piwoori/mission02-quiz-game.git
@@ -45,13 +44,13 @@ git clone https://github.com/piwoori/mission02-quiz-game.git
 cd mission02-quiz-game
 ```
 
-다음 명령어로 프로그램을 실행합니다.
+프로그램을 실행합니다.
 
 ```bash
 python3 main.py
 ```
 
-별도의 외부 라이브러리를 사용하지 않으므로 추가 패키지 설치는 필요하지 않습니다.
+Python 표준 라이브러리만 사용하므로 별도의 외부 패키지 설치는 필요하지 않습니다.
 
 ---
 
@@ -85,9 +84,9 @@ python3 main.py
 
 ![퀴즈 풀기](docs/screenshots/play-quiz.png)
 
-### 결과 화면
+### 퀴즈 결과
 
-모든 문제를 풀면 맞힌 문제 수와 최고 점수를 출력합니다.
+모든 문제를 풀면 전체 문제 수, 맞힌 문제 수, 최고 점수를 출력합니다.
 
 ![퀴즈 결과](docs/screenshots/quiz-result.png)
 
@@ -115,12 +114,11 @@ python3 main.py
 
 현재 등록된 모든 퀴즈의 번호와 문제를 확인할 수 있습니다.
 
-등록된 퀴즈가 없는 경우에는 별도의 안내 문구를 출력합니다.
-
 ![퀴즈 목록](docs/screenshots/quiz-list.png)
 
-> **추가 캡처 권장:** 등록된 퀴즈가 없을 때의 안내 화면  
-> 권장 파일명: `docs/screenshots/empty-quiz-list.png`
+등록된 퀴즈가 없는 경우에는 별도의 안내 문구를 출력합니다.
+
+![빈 퀴즈 목록](docs/screenshots/empty-quiz-list.png)
 
 ---
 
@@ -128,20 +126,17 @@ python3 main.py
 
 현재 저장된 최고 점수를 확인할 수 있습니다.
 
-아직 퀴즈를 한 번도 풀지 않은 경우에는 다음과 같은 별도의 안내 문구를 출력합니다.
+![최고 점수](docs/screenshots/best-score.png)
+
+아직 퀴즈를 한 번도 풀지 않은 경우에는 다음과 같은 안내 문구를 출력합니다.
 
 ```text
 아직 퀴즈를 풀지 않았습니다.
 ```
 
-퀴즈를 풀고 0점을 받은 경우에는 최고 점수 0점을 정상적으로 표시합니다.
-
-![최고 점수](docs/screenshots/best-score.png)
-
-> **추가 캡처 필요:** 퀴즈를 한 번도 풀지 않은 상태에서 점수 확인 메뉴를 실행한 화면  
-> 권장 파일명: `docs/screenshots/no-score-yet.png`
-
 ![미응시 점수 화면](docs/screenshots/no-score-yet.png)
+
+퀴즈를 풀고 0점을 받은 경우에도 최고 점수 0점을 정상적으로 표시할 수 있도록 퀴즈 풀이 여부를 별도로 저장합니다.
 
 ---
 
@@ -151,30 +146,47 @@ python3 main.py
 
 프로그램을 다시 실행하면 기존 데이터를 불러오기 때문에 이전에 추가한 퀴즈와 최고 점수가 유지됩니다.
 
-![state.json](docs/screenshots/state-json.png)
+![JSON 저장 데이터](docs/screenshots/state-json.png)
 
 ---
 
 ## 7. 입력 및 예외 처리
 
-잘못된 입력이나 파일 오류로 인해 프로그램이 비정상적으로 종료되지 않도록 예외 처리를 구현했습니다.
+잘못된 입력이나 파일 오류로 인해 프로그램이 비정상적으로 종료되지 않도록 입력 검증과 예외 처리를 구현했습니다.
 
-### 사용자 입력 처리
+### 메뉴 입력 처리
 
-- 메뉴의 빈 입력
+- 빈 입력
 - 메뉴 범위를 벗어난 입력
-- 숫자가 아닌 메뉴 입력
+- 숫자가 아닌 입력
+
+![잘못된 메뉴 입력](docs/screenshots/invalid-menu.png)
+
+### 퀴즈 입력 처리
+
 - 문제 및 선택지의 빈 입력
 - 정답 번호의 빈 입력
 - 숫자가 아닌 정답 입력
 - 1부터 4까지의 범위를 벗어난 정답 번호
 
+![잘못된 정답 입력 1](docs/screenshots/invalid-answer-1.png)
+
+![잘못된 정답 입력 2](docs/screenshots/invalid-answer-2.png)
+
 ### 파일 관련 예외 처리
 
 - JSON 파일이 존재하지 않는 경우
-- JSON 파일이 손상된 경우 (`JSONDecodeError`)
-- JSON 데이터 구조가 잘못된 경우 (`KeyError`, `TypeError`)
+- JSON 파일의 문법이 손상된 경우 (`JSONDecodeError`)
+- JSON 데이터 구조나 자료형이 잘못된 경우 (`KeyError`, `TypeError`)
 - 파일 읽기 및 쓰기 오류 (`OSError`)
+
+잘못된 JSON 데이터를 이용해 복구 기능을 테스트했습니다.
+
+![잘못된 JSON 데이터](docs/screenshots/invalid-state-json.png)
+
+파일을 읽을 수 없는 경우 기본 퀴즈를 생성하고 정상적인 JSON 파일로 복구합니다.
+
+![JSON 복구](docs/screenshots/json-recovery.png)
 
 ### 프로그램 입력 중단 처리
 
@@ -182,13 +194,6 @@ python3 main.py
 - `EOFError`
 
 입력이 중단되면 현재 데이터를 저장한 후 프로그램을 종료합니다.
-
-![잘못된 입력 처리](docs/screenshots/invalid-answer.png)
-
-> **추가 캡처 필요:** 손상된 `state.json`을 기본 퀴즈 데이터로 복구하는 화면  
-> 권장 파일명: `docs/screenshots/json-recovery.png`
-
-![JSON 복구](docs/screenshots/json-recovery.png)
 
 ---
 
@@ -201,9 +206,21 @@ mission02-quiz-game
 │   └── screenshots/
 │       ├── add-quiz.png
 │       ├── best-score.png
-│       ├── invalid-answer.png
+│       ├── development-environment.png
+│       ├── empty-quiz-list.png
+│       ├── git-clone.png
+│       ├── git-log-graph.png
+│       ├── git-pull-1.png
+│       ├── git-pull-2.png
+│       ├── invalid-answer-1.png
+│       ├── invalid-answer-2.png
+│       ├── invalid-menu.png
+│       ├── invalid-state-json.png
+│       ├── json-recovery.png
 │       ├── main-menu.png
+│       ├── no-score-yet.png
 │       ├── play-quiz.png
+│       ├── push-success.png
 │       ├── quiz-list.png
 │       ├── quiz-result.png
 │       └── state-json.png
@@ -310,7 +327,7 @@ QuizGame
 
 # 기본 퀴즈 데이터
 
-프로그램을 처음 실행해 `state.json` 파일이 존재하지 않는 경우, 개발 관련 기본 퀴즈 5개를 생성합니다.
+프로그램을 처음 실행해 `state.json` 파일이 존재하지 않는 경우 개발 관련 기본 퀴즈 5개를 생성합니다.
 
 기본 퀴즈의 주제는 다음과 같습니다.
 
@@ -373,13 +390,13 @@ project_root = Path(__file__).resolve().parent
 self.file_name = project_root / "state.json"
 ```
 
-이를 통해 프로그램을 어느 경로에서 실행하더라도 프로젝트 폴더의 `state.json` 파일을 사용합니다.
+이를 통해 프로그램을 어느 경로에서 실행하더라도 프로젝트 폴더 안의 `state.json` 파일을 사용합니다.
 
 ---
 
 # Git 브랜치 전략
 
-기능별 브랜치를 생성하여 작업한 후 `main` 브랜치에 병합했습니다.
+기능 브랜치에서 JSON 저장 및 예외 처리 기능을 구현한 후 `main` 브랜치에 병합했습니다.
 
 ```text
 main
@@ -392,10 +409,7 @@ main
       └── 객관식 구조 리팩터링
 ```
 
-기능 구현 과정에서 커밋을 기능 단위로 구분하고, 브랜치 병합을 통해 작업 이력을 관리했습니다.
-
-> **추가 캡처 필요:** `git log --oneline --graph --all` 실행 결과 또는 SourceTree 커밋 그래프  
-> 권장 파일명: `docs/screenshots/git-log-graph.png`
+기능 구현 과정에서 커밋을 기능 단위로 구분하고 브랜치 병합을 통해 작업 이력을 관리했습니다.
 
 ```bash
 git log --oneline --graph --all
@@ -405,7 +419,9 @@ git log --oneline --graph --all
 
 ---
 
-# Git Clone 및 Pull 실습
+# Git Clone, Push 및 Pull 실습
+
+## 1. 저장소 Clone
 
 다른 작업 환경에서 원격 저장소를 복제하기 위해 `git clone`을 사용했습니다.
 
@@ -413,21 +429,29 @@ git log --oneline --graph --all
 git clone https://github.com/piwoori/mission02-quiz-game.git
 ```
 
-복제한 저장소에서 변경사항을 Commit 및 Push한 뒤, 기존 작업 환경에서는 Pull을 실행하여 최신 변경사항을 반영했습니다.
-
-```bash
-git pull origin main
-```
-
-> **추가 캡처 필요:** 다른 작업 환경에서 Clone한 화면 또는 SourceTree 저장소 복제 화면  
-> 권장 파일명: `docs/screenshots/git-clone.png`
-
-> **추가 캡처 필요:** 기존 작업 환경에서 Pull을 실행하여 변경사항이 반영된 화면  
-> 권장 파일명: `docs/screenshots/git-pull.png`
-
 ![Git Clone](docs/screenshots/git-clone.png)
 
-![Git Pull](docs/screenshots/git-pull.png)
+## 2. 복제한 저장소에서 Commit 및 Push
+
+복제한 저장소의 `README.md`를 수정한 뒤 Commit과 Push를 수행했습니다.
+
+![복제 저장소 Commit 및 Push](docs/screenshots/git-pull-1.png)
+
+Push가 정상적으로 완료되어 로컬 커밋이 원격 저장소의 `main` 브랜치에 반영되었습니다.
+
+![Push 성공](docs/screenshots/push-success.png)
+
+## 3. 기존 저장소에서 Pull
+
+기존 작업 환경에서 Pull을 실행하여 원격 저장소에 반영된 README 변경사항을 가져왔습니다.
+
+```bash
+git pull
+```
+
+Pull 결과 `README.md`의 변경사항이 Fast-forward 방식으로 반영되었습니다.
+
+![Git Pull](docs/screenshots/git-pull-2.png)
 
 ---
 
@@ -435,7 +459,7 @@ git pull origin main
 
 ## 1. 서로 다른 환경에서 JSON 데이터가 달라지는 문제
 
-두 대의 Mac에서 프로젝트를 작업하면서 각 환경에 서로 다른 `state.json` 파일이 생성되어, 추가한 퀴즈와 최고 점수가 다르게 보이는 문제가 발생했습니다.
+두 대의 Mac에서 프로젝트를 작업하면서 각 환경에 서로 다른 `state.json` 파일이 생성되어 추가한 퀴즈와 최고 점수가 다르게 보이는 문제가 발생했습니다.
 
 ### 원인
 
@@ -452,11 +476,11 @@ git pull origin main
 
 ## 2. 실행 위치에 따라 JSON 파일 위치가 달라지는 문제
 
-상대 경로만 사용하면 프로그램을 실행한 터미널의 현재 위치에 따라 다른 위치에 `state.json`이 생성될 수 있었습니다.
+상대 경로만 사용하면 프로그램을 실행한 터미널의 현재 위치에 따라 다른 위치에 `state.json` 파일이 생성될 수 있었습니다.
 
 ### 해결
 
-`pathlib.Path`를 사용하여 `quiz_game.py` 파일이 위치한 프로젝트 폴더를 기준으로 JSON 파일의 절대 경로를 생성했습니다.
+`pathlib.Path`를 사용하여 `quiz_game.py`가 위치한 프로젝트 폴더를 기준으로 JSON 파일의 절대 경로를 생성했습니다.
 
 ```python
 project_root = Path(__file__).resolve().parent
@@ -465,13 +489,18 @@ self.file_name = project_root / "state.json"
 
 ---
 
-## 3. 손상된 JSON 파일로 인해 프로그램이 종료되는 문제
+## 3. 잘못되거나 손상된 JSON 데이터로 인해 프로그램이 종료되는 문제
 
-`state.json` 파일의 JSON 형식이 잘못되면 `json.load()` 과정에서 프로그램이 종료되는 문제가 있었습니다.
+`state.json` 파일의 JSON 형식이나 데이터 구조가 잘못되면 `json.load()` 또는 데이터 처리 과정에서 프로그램이 종료될 수 있었습니다.
 
 ### 해결
 
-`json.JSONDecodeError`를 비롯한 파일 및 데이터 관련 예외를 처리했습니다.
+다음과 같은 파일 및 데이터 관련 예외를 처리했습니다.
+
+- `JSONDecodeError`
+- `KeyError`
+- `TypeError`
+- `OSError`
 
 오류가 발생한 경우 다음 작업을 수행합니다.
 
@@ -501,9 +530,9 @@ GitHub는 Git 작업에서 일반 계정 비밀번호 인증을 지원하지 않
 - SourceTree에서 GitHub 계정을 다시 연결했습니다.
 - 기존에 저장된 잘못된 인증 정보를 제거했습니다.
 - GitHub OAuth 또는 Personal Access Token을 사용해 다시 인증했습니다.
+- 인증을 다시 설정한 후 Push가 정상적으로 완료되는 것을 확인했습니다.
 
-> **추가 캡처 권장:** SourceTree에서 정상적으로 Push가 완료된 화면  
-> 권장 파일명: `docs/screenshots/push-success.png`
+![Push 성공](docs/screenshots/push-success.png)
 
 ---
 
@@ -520,13 +549,10 @@ GitHub는 Git 작업에서 일반 계정 비밀번호 인증을 지원하지 않
 - 프로그램 재실행 후 추가한 퀴즈 유지
 - 최고 점수 갱신 및 유지
 - 미응시 상태와 0점 상태 구분
-- 손상된 JSON 파일 복구
+- 빈 퀴즈 목록 처리
+- 손상되거나 잘못된 JSON 데이터 복구
 - `Ctrl+C` 입력 시 데이터 저장 후 종료
-
-> **추가 캡처 필요:** 최종 프로그램 실행 결과가 한 화면에 보이는 캡처  
-> 권장 파일명: `docs/screenshots/final-run.png`
-
-![최종 실행 결과](docs/screenshots/final-run.png)
+- Git Clone, Commit, Push 및 Pull 수행
 
 ---
 
@@ -547,5 +573,4 @@ GitHub는 Git 작업에서 일반 계정 비밀번호 인증을 지원하지 않
 - Git 브랜치 생성 및 병합
 - Git Clone, Pull, Commit, Push
 - SourceTree를 활용한 Git 관리
-- 서로 다른 개발 환경에서 작업 내용을 동기화하는 방법
-  - Git Clone과 Pull을 이용한 저장소 동기화
+- 서로 다른 개발 환경에서 Git을 이용해 작업 내용을 동기화하는 방법
