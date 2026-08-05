@@ -1,4 +1,4 @@
-# 🫯 나만의 퀴즈 게임
+# 나만의 퀴즈 게임
 
 Python 객체지향 프로그래밍(OOP), JSON 파일 입출력, Git 브랜치 활용을 학습하기 위해 제작한 콘솔 기반 객관식 퀴즈 게임입니다.
 
@@ -19,7 +19,7 @@ Python 객체지향 프로그래밍(OOP), JSON 파일 입출력, Git 브랜치 �
 # 개발 환경
 
 - Python 3.11.8
-- Visual Studio Code
+- IntelliJ
 - Git
 - SourceTree
 - macOS
