@@ -160,7 +160,8 @@ Python 표준 라이브러리만 사용하므로 별도의 외부 패키지 설�
 - 메뉴 범위를 벗어난 입력
 - 숫자가 아닌 입력
 
-![잘못된 메뉴 입력](docs/screenshots/invalid-menu.png)
+![잘못된 메뉴 입력1](docs/screenshots/invalid-menu-1.png)
+![잘못된 메뉴 입력2](docs/screenshots/invalid-menu-2.png)
 
 ### 퀴즈 입력 처리
 
@@ -170,7 +171,6 @@ Python 표준 라이브러리만 사용하므로 별도의 외부 패키지 설�
 - 1부터 4까지의 범위를 벗어난 정답 번호
 
 ![잘못된 정답 입력 1](docs/screenshots/invalid-answer-1.png)
-
 ![잘못된 정답 입력 2](docs/screenshots/invalid-answer-2.png)
 
 ### 파일 관련 예외 처리
@@ -195,6 +195,7 @@ Python 표준 라이브러리만 사용하므로 별도의 외부 패키지 설�
 
 입력이 중단되면 현재 데이터를 저장한 후 프로그램을 종료합니다.
 
+![입력 중단](docs/screenshots/input-error.png)
 ---
 
 # 프로젝트 구조
