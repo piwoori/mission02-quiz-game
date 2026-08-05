@@ -548,3 +548,4 @@ GitHub는 Git 작업에서 일반 계정 비밀번호 인증을 지원하지 않
 - Git Clone, Pull, Commit, Push
 - SourceTree를 활용한 Git 관리
 - 서로 다른 개발 환경에서 작업 내용을 동기화하는 방법
+  - Git Clone과 Pull을 이용한 저장소 동기화
