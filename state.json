@@ -1,0 +1,56 @@
+{
+    "best_score": 0,
+    "has_played": false,
+    "quizzes": [
+        {
+            "question": "Python에서 여러 값을 순서대로 저장하는 자료형은?",
+            "choices": [
+                "int",
+                "list",
+                "bool",
+                "str"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Git에서 현재 변경 상태를 확인하는 명령어는?",
+            "choices": [
+                "git status",
+                "git push",
+                "git clone",
+                "git merge"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "파이썬 파일의 확장자는?",
+            "choices": [
+                ".java",
+                ".html",
+                ".py",
+                ".css"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Java에서 클래스를 선언할 때 사용하는 키워드는?",
+            "choices": [
+                "class",
+                "new",
+                "import",
+                "static"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Git에서 로컬 커밋을 원격 저장소로 업로드하는 명령어는?",
+            "choices": [
+                "pull",
+                "clone",
+                "push",
+                "status"
+            ],
+            "answer": 3
+        }
+    ]
+}
