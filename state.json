@@ -1,25 +1,26 @@
 {
-    "best_score": 5,
+    "best_score": 0,
+    "has_played": false,
     "quizzes": [
         {
-            "question": "대한민국의 수도는?",
+            "question": "Python에서 여러 값을 순서대로 저장하는 자료형은?",
             "choices": [
-                "부산",
-                "서울",
-                "인천",
-                "대전"
+                "int",
+                "list",
+                "bool",
+                "str"
             ],
             "answer": 2
         },
         {
-            "question": "2 + 3의 결과는?",
+            "question": "Git에서 현재 변경 상태를 확인하는 명령어는?",
             "choices": [
-                "4",
-                "5",
-                "6",
-                "7"
+                "git status",
+                "git push",
+                "git clone",
+                "git merge"
             ],
-            "answer": 2
+            "answer": 1
         },
         {
             "question": "파이썬 파일의 확장자는?",
@@ -32,7 +33,7 @@
             "answer": 3
         },
         {
-            "question": "JAva에서 클래스를 선언할 때 사용하는 키워드는?",
+            "question": "Java에서 클래스를 선언할 때 사용하는 키워드는?",
             "choices": [
                 "class",
                 "new",
@@ -50,16 +51,6 @@
                 "status"
             ],
             "answer": 3
-        },
-        {
-            "question": "Python의 창시자는?",
-            "choices": [
-                "귀도 반 로섬",
-                "제임스 고슬링",
-                "데니스 리치",
-                "비야네 스트롭스트룹"
-            ],
-            "answer": 1
         }
     ]
 }
