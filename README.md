@@ -436,8 +436,6 @@ git clone https://github.com/piwoori/mission02-quiz-game.git
 
 복제한 저장소의 `README.md`를 수정한 뒤 Commit과 Push를 수행했습니다.
 
-![복제 저장소 Commit 및 Push](docs/screenshots/git-pull-1.png)
-
 Push가 정상적으로 완료되어 로컬 커밋이 원격 저장소의 `main` 브랜치에 반영되었습니다.
 
 ![Push 성공](docs/screenshots/push-success.png)
