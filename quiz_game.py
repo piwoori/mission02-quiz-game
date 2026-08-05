@@ -2,10 +2,12 @@ import json
 from pathlib import Path
 from quiz import Quiz
 
+
 class QuizGame:
     def __init__(self):
         self.quizzes = []
         self.best_score = 0
+        self.has_played = False
         project_root = Path(__file__).resolve().parent
         self.file_name = project_root / "state.json"
 
@@ -23,19 +25,30 @@ class QuizGame:
         print("==============================")
 
     def add_quiz(self):
-        question = input("추가할 퀴즈의 질문을 입력하세요: ").strip()
+        question = self.input_not_empty(
+            "추가할 퀴즈의 질문을 입력하세요: "
+        )
 
         choices = []
 
         for index in range(1, 5):
-            choice = input(f"{index}번 선택지를 입력하세요: ").strip()
+            choice = self.input_not_empty(
+                f"{index}번 선택지를 입력하세요: "
+            )
             choices.append(choice)
 
         while True:
-            answer_input = input("정답 번호를 입력하세요 (1-4): ").strip()
+            answer_input = input(
+                "정답 번호를 입력하세요 (1-4): "
+            ).strip()
+
+            if answer_input == "":
+                print("입력값이 없습니다.")
+                continue
 
             try:
                 answer = int(answer_input)
+
             except ValueError:
                 print("숫자를 입력해주세요.")
                 continue
@@ -102,7 +115,7 @@ class QuizGame:
     def show_quizzes(self):
         if not self.quizzes:
             print("\n등록된 퀴즈가 없습니다.")
-            return    
+            return
 
         print("\n===== 퀴즈 목록 =====")
 
@@ -161,16 +174,20 @@ class QuizGame:
             f"{score}문제를 맞혔습니다."
         )
 
+        self.has_played = True
+
         if score > self.best_score:
             self.best_score = score
-            self.save_data()
             print("새로운 최고 점수입니다!")
+
+        self.save_data()
 
         print(f"최고 점수: {self.best_score}")
 
     def save_data(self):
         data = {
             "best_score": self.best_score,
+            "has_played": self.has_played,
             "quizzes": []
         }
 
@@ -196,6 +213,7 @@ class QuizGame:
                 data = json.load(file)
 
             self.best_score = data["best_score"]
+            self.has_played = data.get("has_played", False)
             self.quizzes = []
 
             for quiz_data in data["quizzes"]:
@@ -214,15 +232,17 @@ class QuizGame:
             self.save_data()
 
         except (json.JSONDecodeError, KeyError, TypeError, OSError):
-            print("저장된 파일이 없어 기본 퀴즈로 복구합니다.")
+            print("저장된 파일을 읽을 수 없어 "
+                  "기본 퀴즈로 복구합니다.")
             self.quizzes = []
             self.best_score = 0
+            self.has_played = False
             self.add_default_quizzes()
             self.save_data()
 
     def show_best_score(self):
-        if self.best_score == 0:
-            print("\n아직 기록된 최고 점수가 없습니다.\n")
+        if not self.has_played:
+            print("\n아직 퀴즈를 풀지 않았습니다.\n")
             return
 
         print(f"\n현재 최고 점수는 {self.best_score}점입니다.\n")
